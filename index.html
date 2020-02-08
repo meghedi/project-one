@@ -25,7 +25,7 @@
     <input type="text" id="zipCodeInput"><br>
 
     <!-- Submit Button -->
-    <input id="zipCodeSubmit" type="submit" value="GO!">
+    <input id="go" type="submit" value="GO!">
   </form>
 
   <!-- area for results -->
@@ -33,53 +33,11 @@
 
 
 
-  <!-- JS for metaweather API -->
-  <script type="text/javascript">
-
-
-    $("zipCodeSubmit").on("click", function (event) {
-      event.preventDefault();
-
-      console.log($("#zipCodeInput").val().trim());
-
-      var zipCode = parseInt($("#zipCodeInput").val().trim());
-
-      console.log(zipCode);
-
-      const apiKey = "4d6325b46142f4a1f02bbd88590a9736";
-
-      // for search by zipcode
-      var queryURL = "https://api.openweathermap.org/data/2.5/weather?zip=" + zipCode + "&appid=" + apiKey;
-
-      console.log(apiKey);
-
-      $.ajax({
-        url: queryURL,
-        method: "GET"
-      }).then(function (response) {
-        console.log(response);
-
-        // temperature
-        var temperature = response.main.temp;
-        console.log(temperature);
-
-        // description
-        var description = response.weather[0].main;
-        console.log(description);
-      });
-    })
-
-  </script>
-
-
-
-
-
-
+ 
 
   <!-- javascript file -->
   <!-- check href is correct -->
-  <!-- <script type="text/javascript" src="script.js"></script> -->
+  <script type="text/javascript" src="assets/js/zipcode.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 
