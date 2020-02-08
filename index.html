@@ -7,21 +7,29 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>weather API</title>
 
-  <!-- reset css -->
-  <!--check href for reset.css file is correct-->
-  <!-- <link rel="stylesheet" href="reset.css"> -->
-
   <!-- jquery script -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <!--my links-->
-  <!-- check href is correct -->
-  <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
 </head>
 
 <body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+
+
+  <form id="test-form">
+
+    <!-- Label for Text Box -->
+    <label for="zipCodeInput">insert zipcode</label>
+
+    <!-- Text Input Box -->
+    <input type="text" id="zipCodeInput"><br>
+
+    <!-- Submit Button -->
+    <input id="zipCodeSubmit" type="submit" value="GO!">
+  </form>
+
+  <!-- area for results -->
+  <div id="results"></div>
 
 
 
@@ -29,26 +37,37 @@
   <script type="text/javascript">
 
 
+    $("zipCodeSubmit").on("click", function (event) {
+      event.preventDefault();
 
-    // where on earth ID
-    // var woeid =
+      console.log($("#zipCodeInput").val().trim());
 
+      var zipCode = parseInt($("#zipCodeInput").val().trim());
 
-    // date format yyyy/mm/dd
-    // var date =
+      console.log(zipCode);
 
+      const apiKey = "4d6325b46142f4a1f02bbd88590a9736";
 
-    // /api/location/(woeid)/(date)/
-    var queryURL = "https://www.metaweather.com/api/location/" + woeid + "/" + date + "/";
+      // for search by zipcode
+      var queryURL = "https://api.openweathermap.org/data/2.5/weather?zip=" + zipCode + "&appid=" + apiKey;
 
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function (response) {
-      console.log(response);
-    });
+      console.log(apiKey);
 
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      }).then(function (response) {
+        console.log(response);
 
+        // temperature
+        var temperature = response.main.temp;
+        console.log(temperature);
+
+        // description
+        var description = response.weather[0].main;
+        console.log(description);
+      });
+    })
 
   </script>
 
@@ -61,7 +80,7 @@
   <!-- javascript file -->
   <!-- check href is correct -->
   <!-- <script type="text/javascript" src="script.js"></script> -->
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 
 </html>
