@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>weather API</title>
+
+  <!-- reset css -->
+  <!--check href for reset.css file is correct-->
+  <!-- <link rel="stylesheet" href="reset.css"> -->
+
+  <!-- jquery script -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+  <!--my links-->
+  <!-- check href is correct -->
+  <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+
+  <!-- JS for metaweather API -->
+  <script type="text/javascript">
+
+
+
+    // where on earth ID
+    // var woeid =
+
+
+    // date format yyyy/mm/dd
+    // var date =
+
+
+    // /api/location/(woeid)/(date)/
+    var queryURL = "https://www.metaweather.com/api/location/" + woeid + "/" + date + "/";
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function (response) {
+      console.log(response);
+    });
+
+
+
+  </script>
+
+
+
+
+
+
+
+  <!-- javascript file -->
+  <!-- check href is correct -->
+  <!-- <script type="text/javascript" src="script.js"></script> -->
+
+</body>
+
+</html>
