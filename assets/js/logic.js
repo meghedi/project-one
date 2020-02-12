@@ -30,18 +30,6 @@ function getInputValue() {
 }
 
 
-// 5 day forecast by zipcode
-function zipCodeForecast() {
-  inputVal = $('#zipCodeInput').val();
-  let weatherApiUrl = "https://api.openweathermap.org/data/2.5/forecast?zip=" + inputVal + "&appid=" + weatherApiKey
-  getApiCallObj(weatherApiUrl);
-
-  $.ajax(apiCall).then(function (result) {
-    console.log(result);
-
-  });
-}
-
 function getGiphy(main) {
   let giphyApiUrl = "https://api.giphy.com/v1/gifs/search?api_key=" + giphyApiKey + "&q=" + main + "&limit=1&offset=0&rating=G&lang=en";
   getApiCallObj(giphyApiUrl);
@@ -62,7 +50,3 @@ $('#go').on('click', function (event) {
 });
 
 
-$("#goForecast").on("click", function(event){
-  event.preventDefault();
-zipCodeForecast();
-})
