@@ -38,14 +38,13 @@ function getGiphy(main) {
     console.log(result);
     for (let i = 0; i < result.data.length; i++) {
       let imgUrl = result.data[i].images.fixed_width.url;
-      $('#giphyImg').html('<img src="' + imgUrl + '">');
+      $('#giphyImg').html('<img src="' + imgUrl + '" id="boxGiphyImg">');
 
     }
   });
 }
 
 $('#go').on('click', function (event) {
-  alert('here');
   event.preventDefault();
   getInputValue();
 });
