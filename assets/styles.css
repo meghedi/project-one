@@ -21,16 +21,16 @@ label {
     margin-top: 25px;
 }
 
-#boxSpace1 {
+.mainBoxSpace {
     width: 200px;
     height: 200px;
-    border-style: solid;
+  /*  border-style: solid;
     border-width: thin;
-    border-color: black;
+    border-color: black;*/
     margin: auto;
 }
 
-#boxSpace2, #boxSpace3, #boxSpace4, #boxSpace5 {
+.boxSpace {
     width: 175px;
     height: 175px;
     border-style: solid;
