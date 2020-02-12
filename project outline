@@ -1,0 +1,14 @@
+title: IPHY weather "because the weather is iffy"
+
+team: dominica, kelli, meg, stephanie
+
+description: user inputs a location (by zipcode)
+			returns: current weather
+					forecast for next 5 days
+					image/gif related to the weather
+
+APIs: metaweather.come/api
+		giphy.com/api
+
+
+task breakdown: use mockflow to make a wireframe and review other's ideas
