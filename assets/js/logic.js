@@ -45,6 +45,7 @@ function getGiphy(main) {
 }
 
 $('#go').on('click', function (event) {
+  alert('here');
   event.preventDefault();
   getInputValue();
 });

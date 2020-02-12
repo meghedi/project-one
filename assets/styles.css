@@ -1,0 +1,42 @@
+h2 {
+    margin-left: 30px;
+}
+
+#searchContainer {
+    margin: auto;
+
+}
+
+#instructions {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 25px;  
+}
+
+label {
+    font-size: 20px;
+}
+
+#forecast {
+    margin-top: 25px;
+}
+
+#boxSpace1 {
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    margin: auto;
+}
+
+#boxSpace2, #boxSpace3, #boxSpace4, #boxSpace5 {
+    width: 175px;
+    height: 175px;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    display: inline-flex;
+    margin: auto;
+    margin-top: 30px;
+}
