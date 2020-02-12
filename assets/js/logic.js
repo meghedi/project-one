@@ -37,7 +37,7 @@ function getGiphy(main) {
   $.ajax(apiCall).then(function (result) {
     console.log(result);
     for (let i = 0; i < result.data.length; i++) {
-      let imgUrl = result.data[i].images.lfixed_width.ur;
+      let imgUrl = result.data[i].images.fixed_width.ur;
       $('#giphyImg').html('<img src="' + imgUrl + '" id="boxGiphyImg">');
 
     }
