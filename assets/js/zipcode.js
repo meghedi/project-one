@@ -4,20 +4,20 @@ const zipcodeAPIkey = "4d6325b46142f4a1f02bbd88590a9736";
 const zipcodeForecastAPIkey = "7c503c0e58d64fcc85af4093549c4a07";
 let zipcode = 0;
 // let apiCall;    // === repeated: delete when merge
-let date ;
+let date;
 
 
 
-    // function that returns an object "apiCall" 
-    // give it a url that incorporates user's input zipcode
-    //==== repeated : delete when merge 
-    function getApiCallObj(url) {
-        apiCall = {
-            url: url,
-            method: "GET"
-        };
-        return apiCall;    // this is the object we give ajax 
-    }
+// function that returns an object "apiCall" 
+// give it a url that incorporates user's input zipcode
+//==== repeated : delete when merge 
+function getApiCallObj(url) {
+    apiCall = {
+        url: url,
+        method: "GET"
+    };
+    return apiCall;    // this is the object we give ajax 
+}
 
 function byZipCode() {
     // getting the value from html 
@@ -58,7 +58,7 @@ function zipCodeForecast() {
     console.log(zipcode);
 
 
-    
+
     let zipCodeForecastURL = "https://api.weatherbit.io/v2.0/forecast/daily?&postal_code=" + zipcode + "&units=I&days=6&key=" + zipcodeForecastAPIkey;
 
     getApiCallObj(zipCodeForecastURL);
@@ -69,9 +69,9 @@ function zipCodeForecast() {
         forecastArray = result.data
         console.log(forecastArray);
 
-          //------- index=1 because array[0] is the current day --------
-          //--------------------------------------------------------------
-        for (let index = 1; index < forecastArray.length; index++){
+        //------- index=1 because array[0] is the current day --------
+        //--------------------------------------------------------------
+        for (let index = 1; index < forecastArray.length; index++) {
 
             fcDate = forecastArray[index].valid_date;
             fcDescription = forecastArray[index].weather.description;
@@ -79,9 +79,9 @@ function zipCodeForecast() {
             fcMinTemp = forecastArray[index].app_min_temp;
 
 
-            console.log(fcDate, fcDescription,fcMaxTemp, fcMinTemp);
-        
-        }       
+            console.log(fcDate, fcDescription, fcMaxTemp, fcMinTemp);
+
+        }
 
     });
 }
