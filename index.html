@@ -2,46 +2,127 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>weather API</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>weather API</title>
 
-  <!-- jquery script -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- reset css -->
+    <!--check href for reset.css file is correct-->
+    <!-- <link rel="stylesheet" href="reset.css"> -->
 
+    <!-- bootstrap css (optional javascript links at end of page)-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- jquery script -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+    <!--my links-->
+    <link rel="stylesheet" type="text/css" href="assets/styles.css">
 </head>
 
 <body>
+    <div class="container-fluid" id="appLogo">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>IPHY Weather</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="searchContainer">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <p id="instructions">Enter a zip code for the 5 day forecast!</p>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <form>
+                    <div class="form-group">
+                        <label for="zipCodeInput">Zip Code</label>
+                        <input type="zipcode" class="form-control" placeholder="Zip" id="zipCodeInput"
+                            aria-describedby="zipHelp">
+                        <small id="zipHelp" class="form-text text-muted">Please enter a valid zip code.</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="go">Submit</button>
+                </form>
+
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+
+    </div>
+
+    <div class="container" id="forecast">
+        <div class="row">
+            <div class="col-sm-12" id="todaysForecast">
+                <div id="boxSpace1">API</div>
+                <p id="zipCodeTemperature"></p>
+                <p id="zipCodeDescription"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3" id="fourDayForecast">
+                <div id="boxSpace2">API</div>
+            </div>
+            <div class="col-sm-3" id="fourDayForecast">
+                <div id="boxSpace3">API</div>
+            </div>
+            <div class="col-sm-3" id="fourDayForecast">
+                <div id="boxSpace4">API</div>
+            </div>
+            <div class="col-sm-3" id="fourDayForecast">
+                <div id="boxSpace5">API</div>
+            </div>
+        </div>
+    </div>
 
 
+    <!-- JS Psuedocode notes
 
-  <form id="test-form">
-
-    <!-- Label for Text Box -->
-    <label for="zipCodeInput">insert zipcode</label>
-
-    <!-- Text Input Box -->
-    <input type="text" id="zipCodeInput"><br>
-
-    <!-- Submit Button -->
-    <input id="go" type="submit" value="GO!">
-  </form>
-
-  <p id="zipCodeTemperature"></p>
-  <p id="zipCodeDescription"></p>
-
-  <!-- area for results -->
-  <div id="results"></div>
+    //JS for metaweather API 
+    <script type="text/javascript">
 
 
+      // where on earth ID
+      // var woeid =
 
 
+      // date format yyyy/mm/dd
+      // var date =
 
-  <!-- javascript file -->
-  <!-- check href is correct -->
-  <script type="text/javascript" src="assets/js/zipcode.js"></script>
+
+      // /api/location/(woeid)/(date)/
+      var queryURL = "https://www.metaweather.com/api/location/" + woeid + "/" + date + "/";
+
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      }).then(function (response) {
+        console.log(response);
+      });
+
+    </script> -->
+
+
+    <!-- javascript file -->
+    <!-- check href is correct -->
+    <!-- <script type="text/javascript" src="script.js"></script> -->
+
+    <!-- Optional Javascript (bootstrap)-->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ 
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="assets/js/logic.js"></script>
+  <script src="assets/js/zipcode.js"></script>
 </body>
 
 </html>

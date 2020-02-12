@@ -2,7 +2,7 @@
 
 const zipcodeAPIkey = "4d6325b46142f4a1f02bbd88590a9736";
 let zipcode = 0;
-let apiCall;    // === repeated: delete when merge
+// let apiCall;    // === repeated: delete when merge
 
 
 // function that returns an object "apiCall" 
