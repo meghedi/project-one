@@ -40,6 +40,13 @@ function byZipCode() {
     });
 }
 
+
+//use latitude & longitude for finding WOEID
+
+
+
+
+
 // function for submit user input
 $("#go").on("click", function (event) {
     event.preventDefault();
