@@ -48,3 +48,5 @@ $('#go').on('click', function (event) {
   event.preventDefault();
   getInputValue();
 });
+
+
