@@ -17,8 +17,15 @@ function getApiCallObj(url) {
 
 function getInputValue() {
   inputVal = $('#zipCodeInput').val();
+  let weatherApiUrl = '';
+  if (isNaN(inputVal)){
+    weatherApiUrl = "https://api.weatherbit.io/v2.0/forecast/daily?city="+ inputVal +"&units=I&days=5&key=" + weatherApiKey;
+  }else{
+    inputVal = parseInt(inputVal);
+    weatherApiUrl = "https://api.weatherbit.io/v2.0/forecast/daily?&postal_code="+ inputVal +"&units=I&days=5&key=" + weatherApiKey;
+  }
+
  // let weatherApiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + inputVal + "&appid=" + weatherApiKey
-   let weatherApiUrl = "https://api.weatherbit.io/v2.0/forecast/daily?city="+inputVal +"&key="+weatherApiKey+"&days=5"
  getApiCallObj(weatherApiUrl);
 
   $.ajax(apiCall).then(function (result) {
@@ -33,6 +40,9 @@ function getInputValue() {
     $('#forecast .forFourDayForecast').empty();
     $('#giphyImg').empty();
     getGiphy(result.data[0].weather.description);
+    $('.current-temperature__value').html(result.data[0].temp + "°");
+    $('.current-temperature__summary').text(result.data[0].weather.description);
+    $('.current-temperature__icon').attr('src',  "https://www.weatherbit.io/static/img/icons/" + result.data[0].weather.icon + ".png")
 
    for (let i = 1; i < result.data.length; i++) {
       let imgUrl = "https://www.weatherbit.io/static/img/icons/" + result.data[i].weather.icon + ".png";
@@ -59,8 +69,7 @@ function getGiphy(main) {
 function getTemprature(maxTemp, lowTemp, imgUrl){
 
  let newHtml = `<div class="col-sm-3" class="fourDayForecast">
-  <div class="boxSpace">${maxTemp} , ${lowTemp} <img src="${imgUrl}"></p></div>
-</div>`;
+  <div class="boxSpace"><div>${maxTemp} , ${lowTemp} </div><div><img src="${imgUrl}"></div></div>`;
   $('#forecast .forFourDayForecast').append(newHtml);
 }
 
