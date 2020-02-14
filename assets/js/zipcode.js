@@ -6,8 +6,6 @@ let zipcode = 0;
 // let apiCall;    // === repeated: delete when merge
 let date;
 
-
-
 // function that returns an object "apiCall" 
 // give it a url that incorporates user's input zipcode
 //==== repeated : delete when merge 
@@ -42,7 +40,6 @@ function byZipCode() {
 }
 
 
-
 let forecastArray;
 
 let fcDate;
@@ -50,14 +47,10 @@ let fcDescription;
 let fcMaxTemp;
 let fcMinTemp;
 
-
-
 // 5 day forecast by zipcode
 function zipCodeForecast() {
     zipcode = parseInt($("#zipCodeInput").val().trim());
     console.log(zipcode);
-
-
 
     let zipCodeForecastURL = "https://api.weatherbit.io/v2.0/forecast/daily?&postal_code=" + zipcode + "&units=I&days=6&key=" + zipcodeForecastAPIkey;
 
@@ -78,18 +71,10 @@ function zipCodeForecast() {
             fcMaxTemp = forecastArray[index].app_max_temp;
             fcMinTemp = forecastArray[index].app_min_temp;
 
-
             console.log(fcDate, fcDescription, fcMaxTemp, fcMinTemp);
-
         }
-
     });
 }
-
-//use latitude & longitude for finding WOEID
-
-
-
 
 
 // function for submit user input
