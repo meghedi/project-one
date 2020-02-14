@@ -30,6 +30,8 @@ function getInputValue() {
       getGiphy(result.weather[i].main);
       getwoied(result.coord.lon, result.coord.lat)
     }*/
+    $('#forecast .forFourDayForecast').empty();
+    $('#giphyImg').empty();
     getGiphy(result.data[0].weather.description);
 
    for (let i = 1; i < result.data.length; i++) {
