@@ -8,6 +8,7 @@ h2 {
 #logo{
     border-bottom: 1px dotted #ccc;
     padding: 10px 0px;
+    text-align: left;
 }
 #searchContainer {
     margin: auto;
@@ -21,7 +22,14 @@ h2 {
     margin-top: 40px;
     font-size: 25px;  
 }
-
+#languageDropDown{
+    position: fixed;
+    top:20px;
+    right: 30px;
+}
+.lineBetween{
+    color: #ccc;
+}
 .row{
     text-align: center;
 }
@@ -35,9 +43,9 @@ label {
 }
 
 .mainBoxSpace {
-    width: 200px;
+  /*  width: 200px;
     height: 200px;
-  /*  border-style: solid;
+    border-style: solid;
     border-width: thin;
     border-color: black;*/
     margin: auto;
@@ -64,10 +72,4 @@ footer{
     width: 100%;
     bottom: 0px;
     position: fixed;
-}
-
-@media only screen and (min-width: 600px) {
-    .row{
-        text-align: left;
-    }
 }
