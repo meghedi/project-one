@@ -27,6 +27,12 @@ h2 {
     top:20px;
     right: 30px;
 }
+#currentInfo{
+    position: fixed;
+    top:20px;
+    right: 30px;
+}
+
 .lineBetween{
     color: #ccc;
 }
@@ -52,16 +58,17 @@ label {
 }
 
 .boxSpace {
-    width: 175px;
+    max-width: 200px;
     height: 175px;
     border-style: solid;
     border-width: thin;
     border-color: black;
-    margin: auto;
+    margin: 0 auto;
     margin-top: 30px;
-    text-align: center;
     padding: 10px;
+    overflow: hidden;
 }
+
 .container{
     margin-bottom: 100px;
 }
@@ -73,3 +80,13 @@ footer{
     bottom: 0px;
     position: fixed;
 }
+
+/*****library****/
+.ml2 {
+    font-size: 2.5em;
+  }
+  
+  .ml2 .letter {
+    display: inline-block;
+    line-height: 1em;
+  }

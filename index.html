@@ -22,7 +22,7 @@
     <div class="container-fluid" id="appLogo">
         <div class="row">
             <div class="col-sm-12" id="logo">
-                <h2>IPHY Weather</h2>
+                <h2 class="ml2">IPHY Weather</h2>
             </div>
             <!--
             <div id="languageDropDown">
@@ -35,6 +35,7 @@
                   </div>
             </div>
             -->
+            <div id="currentInfo"></div>
         </div>
     </div>
 
@@ -66,11 +67,13 @@
             <div class="col-sm-8">
                 <form>
                     <div class="form-group">
-                        <input type="zipcode" class="form-control" placeholder="Zip Code/ City" id="zipCodeInput"
+                        <input type="zipcode" class="form-control" placeholder="Zip Code/ City, State" id="zipCodeInput"
                             aria-describedby="zipHelp">
-                        <small id="zipHelp" class="form-text text-muted">Please enter a valid zip code/ city.</small>
+                        <small id="zipHelp" class="form-text text-muted">Please enter a valid zip code/ city, Sate
+                            .</small>
                     </div>
                     <button type="submit" class="btn btn-primary" id="go">Submit</button>
+
                 </form>
             </div>
             <div class="col-sm-2"></div>
@@ -82,8 +85,6 @@
         <div class="row">
             <div class="col-sm-12" id="todaysForecast">
                 <div class="mainBoxSpace" id="giphyImg"></div>
-                <p id="zipCodeTemperature"></p>
-                <p id="zipCodeDescription"></p>
             </div>
         </div>
         <div class="row forFourDayForecast">
@@ -93,7 +94,26 @@
         <div>All rights reserved, done by Our group</div>
     </footer>
 
-
+    <!------------Bootsrap Modal for alert-->
+    <div class="modal" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="modalBodyText"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---------------------->
 
 
     <!-- javascript file -->
@@ -107,7 +127,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="assets/js/logic.js"></script>
 </body>
 
