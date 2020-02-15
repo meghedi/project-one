@@ -69,7 +69,7 @@ function getGiphy(main) {
 function getTemprature(maxTemp, lowTemp, imgUrl){
 
  let newHtml = `<div class="col-sm-3" class="fourDayForecast">
-  <div class="boxSpace"><div>${maxTemp} , ${lowTemp} </div><div><img src="${imgUrl}"></div></div>`;
+  <div class="boxSpace"><div>${maxTemp}° <span class="lineBetween"> | </span> ${lowTemp}° </div><div><img src="${imgUrl}"></div></div>`;
   $('#forecast .forFourDayForecast').append(newHtml);
 }
 
