@@ -8,7 +8,7 @@ h2 {
 #logo{
     border-bottom: 1px dotted #ccc;
     padding: 10px 0px;
-    text-align: left;
+    text-align: center;
 }
 #searchContainer {
     margin: auto;
@@ -28,9 +28,8 @@ h2 {
     right: 30px;
 }
 #currentInfo{
-    position: fixed;
-    top:20px;
-    right: 30px;
+    position: relative;
+margin:10px auto;
 }
 
 .lineBetween{
@@ -83,10 +82,35 @@ footer{
 
 /*****library****/
 .ml2 {
-    font-size: 2.5em;
+    font-size: 1.5em;
   }
   
   .ml2 .letter {
     display: inline-block;
     line-height: 1em;
+  }
+
+  #instructions{
+    font-size:1em;
+}
+/***************/
+  @media only screen and (min-width: 600px) {
+    #currentInfo{
+        position: fixed;
+        top:20px;
+        right: 30px;
+    }
+
+    #logo{
+        border-bottom: 1px dotted #ccc;
+        padding: 10px 0px;
+        text-align: left;
+    }
+
+    .ml2 {
+        font-size: 2.5em;
+      }
+      #instructions{
+          font-size:1.5em;
+      }
   }

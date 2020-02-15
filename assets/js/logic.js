@@ -5,6 +5,9 @@ let apiCall;
 
 let currentDay = moment();
 
+let cityName = "";
+let state = "";
+
 
 function getApiCallObj(url) {
   apiCall = {
@@ -20,15 +23,16 @@ function getInputValue() {
   let weatherApiUrl = '';
   if (isNaN(inputVal)) {
     let inputArray = inputVal.split(",");
-    let cityName = inputArray[0];
-    let state = inputArray[1];
+     cityName = inputArray[0];
+     state = inputArray[1];
 
     console.log(cityName , state);
-    if(typeof state ==='undefined'){
+    if(typeof state ==='undefined' || typeof cityName === 'undefined'){
       console.log('here');
       $("#myModal").find("#modalTitle").text("City Name, State");
-      $("#myModal").find("#modalBodyText").text("Please Enter City, State");
+      $("#myModal").find("#modalBodyText").text("Please Enter City, State with ',' seperated!");
       $('#myModal').modal('show');
+      $('#forecast .forFourDayForecast, #giphyImg').empty();
       return;
     }
     weatherApiUrl = "https://api.weatherbit.io/v2.0/forecast/daily?city=" + cityName +","+ state +"&units=I&days=5&key=" + weatherApiKey;
@@ -43,6 +47,8 @@ function getInputValue() {
       $("#myModal").find("#modalTitle").text("Zip Code");
       $("#myModal").find("#modalBodyText").text("Please Enter a Zip Code.")
       $('#myModal').modal('show');
+      $('#forecast .forFourDayForecast, #giphyImg').empty();
+
       return;
     }
   }
@@ -59,7 +65,7 @@ function getInputValue() {
     $('.current-temperature__summary').text(result.data[0].weather.description);
     $('.current-temperature__icon').attr('src', "https://www.weatherbit.io/static/img/icons/" + result.data[0].weather.icon + ".png");
 
-    //getCurrentInfo(result.city_name);
+    getCurrentInfo(result.city_name, result.state_code);
 
 
     for (let i = 1; i < result.data.length; i++) {
@@ -69,6 +75,9 @@ function getInputValue() {
   });
 }
 
+function getCurrentInfo(cityName, stateName){
+    $("#currentInfo").html("<p>"+ cityName +", "+ stateName+"</p>");
+}
 
 function getGiphy(main) {
   let giphyApiUrl = "https://api.giphy.com/v1/gifs/search?api_key=" + giphyApiKey + "&q=" + main + "&limit=1&offset=0&rating=G&lang=en";
