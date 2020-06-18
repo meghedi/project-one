@@ -5,3 +5,5 @@ two APIs for our backend
   Weatherbit holds the Zip Code info & City name and State.
   GIPHY generates the image for Today’s Date
 The four day forecast icons, minimum and high temperatures are generated from Weatherbit. 
+
+https://meghedi.github.io/project-one/
